@@ -7,25 +7,28 @@ import jakarta.persistence.Id;
 
 
 @Entity
-
+@Table(name="user")
 public class User {
    @Id
 	private int id =0;
-	private String name =null;
+	private String fristName =null;
+	private String lastName =null;
 	private String username =null;
-	private String password =null;
+	private int phone=0;
 	private int age =0;
+	private String password =null;
 	
+
 	
-	
-	public User(String name, String username, String password, int age) {
+	public User(String fristName, String lastName, String username, int phone, int age, String password) {
 		super();
-		this.name = name;
+		this.fristName = fristName;
+		this.lastName = lastName;
 		this.username = username;
-		this.password = password;
+		this.phone = phone;
 		this.age = age;
+		this.password = password;
 	}
-	
 	
 	
 	
@@ -35,11 +38,17 @@ public class User {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getFristName() {
+		return fristName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFristName(String fristName) {
+		fristName = fristName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		lastName = lastName;
 	}
 	public String getUsername() {
 		return username;
@@ -47,25 +56,31 @@ public class User {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
 	public int getAge() {
 		return age;
 	}
 	public void setAge(int age) {
 		this.age = age;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+
 
 
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + ", age="
-				+ age + "]";
+		return "User [id=" + id + ", FristName=" + fristName + ", LastName=" + lastName + ", username=" + username
+				+ ", age=" + age + ", password=" + password + "]";
 	}
+
+
+	
+
 	
 }
