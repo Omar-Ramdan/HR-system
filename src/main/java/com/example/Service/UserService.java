@@ -2,11 +2,9 @@ package com.example.Service;
 
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
-
-import com.example.model.User;
 import com.example.Repository.UserRepository;
 
-
+import com.example.model.Users;
 
 @Service
 @Transactional
@@ -21,7 +19,7 @@ public class UserService {
 
 		}
 
-		public void saveMyUser(User user) {
+		public void saveMyUser(Users user) {
 
 			userRepository.save(user);
 		}
